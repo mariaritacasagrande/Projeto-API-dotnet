@@ -34,3 +34,4 @@
 /home/rita/Documents/GitHub/Projeto API dotnet/MinhaPrimeiraApi/obj/Debug/net10.0/MinhaPrimeiraApi.pdb
 /home/rita/Documents/GitHub/Projeto API dotnet/MinhaPrimeiraApi/obj/Debug/net10.0/MinhaPrimeiraApi.genruntimeconfig.cache
 /home/rita/Documents/GitHub/Projeto API dotnet/MinhaPrimeiraApi/obj/Debug/net10.0/ref/MinhaPrimeiraApi.dll
+/home/rita/Documents/GitHub/Projeto API dotnet/MinhaPrimeiraApi/obj/Debug/net10.0/MinhaPrimeiraApi.sourcelink.json
