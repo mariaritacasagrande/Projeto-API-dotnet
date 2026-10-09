@@ -1,0 +1,53 @@
+<h1>CRUD de Produtos</h1>
+
+@if (mensagem()) {
+  <p class="mensagem">{{ mensagem() }}</p>
+}
+
+<section>
+  <h2>Buscar por ID</h2>
+  <input type="number" [(ngModel)]="buscaId" placeholder="ID" />
+  <button (click)="buscarPorId()">Buscar</button>
+  @if (produtoBuscado()) {
+    <p>{{ produtoBuscado()!.id }} — {{ produtoBuscado()!.nome }} — R$ {{ produtoBuscado()!.preco }}</p>
+  }
+</section>
+
+<section>
+  <h2>Novo Produto</h2>
+  <input [(ngModel)]="novoNome" placeholder="Nome" />
+  <input type="number" [(ngModel)]="novoPreco" placeholder="Preço" />
+  <button (click)="criar()">Adicionar</button>
+</section>
+
+<section>
+  <h2>Todos os Produtos</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Nome</th><th>Preço</th><th>Ações</th></tr>
+    </thead>
+    <tbody>
+      @for (p of produtos(); track p.id) {
+        <tr>
+          @if (editandoId() === p.id) {
+            <td>{{ p.id }}</td>
+            <td><input [(ngModel)]="editNome" /></td>
+            <td><input type="number" [(ngModel)]="editPreco" /></td>
+            <td>
+              <button (click)="salvarEdicao(p.id)">Salvar</button>
+              <button (click)="cancelarEdicao()">Cancelar</button>
+            </td>
+          } @else {
+            <td>{{ p.id }}</td>
+            <td>{{ p.nome }}</td>
+            <td>R$ {{ p.preco }}</td>
+            <td>
+              <button (click)="iniciarEdicao(p)">Editar</button>
+              <button (click)="remover(p.id)">Remover</button>
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

@@ -29,6 +29,10 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// CORS precisa vir primeiro, para que até as respostas de erro e
+// de redirecionamento carreguem os cabeçalhos de CORS.
+app.UseCors("PermitirAngular");
+
 app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
@@ -38,12 +42,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
+else
+{
+    // Em desenvolvimento o Angular usa http://localhost:5027,
+    // então o redirecionamento para HTTPS fica só em produção.
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
-
-app.UseCors("PermitirAngular");
 
 app.MapControllers();
 

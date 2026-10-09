@@ -1,0 +1,7 @@
+:host { display: block; max-width: 800px; margin: 2rem auto; font-family: system-ui, sans-serif; }
+section { margin-bottom: 1.5rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
+input { padding: 0.4rem; margin-right: 0.5rem; }
+button { padding: 0.4rem 0.8rem; margin-right: 0.3rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.5rem; border-bottom: 1px solid #eee; text-align: left; }
+.mensagem { padding: 0.5rem; background: #fff3cd; }
