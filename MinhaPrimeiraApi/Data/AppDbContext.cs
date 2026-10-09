@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MinhaPrimeiraApi.Models;
-
+ 
 namespace MinhaPrimeiraApi.Data;
 
 public class AppDbContext : DbContext
